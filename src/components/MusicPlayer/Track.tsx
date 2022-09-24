@@ -1,4 +1,5 @@
 import React from "react";
+import { Song } from "../../types";
 
 const Track = ({
     isPlaying,
@@ -7,7 +8,7 @@ const Track = ({
 }: {
     isPlaying: boolean;
     isActive: boolean;
-    activeSong: any;
+    activeSong: Song;
 }) => (
     <div className="flex-1 flex items-center justify-start">
         <div

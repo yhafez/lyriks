@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../../hooks";
 
 import {
     nextSong,
@@ -14,17 +14,17 @@ import VolumeBar from "./VolumeBar";
 
 const MusicPlayer = () => {
     const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-        useSelector((state) => state.player);
+        useAppSelector((state) => state.player);
     const [duration, setDuration] = useState(0);
     const [seekTime, setSeekTime] = useState(0);
     const [appTime, setAppTime] = useState(0);
     const [volume, setVolume] = useState(0.3);
     const [repeat, setRepeat] = useState(false);
     const [shuffle, setShuffle] = useState(false);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if (currentSongs.length) dispatch(playPause(true));
+        if (currentSongs?.length) dispatch(playPause(true));
     }, [currentIndex]);
 
     const handlePlayPause = () => {
@@ -67,7 +67,7 @@ const MusicPlayer = () => {
             <div className="flex-1 flex flex-col items-center justify-center">
                 <Controls
                     isPlaying={isPlaying}
-                    isActive={isActive}
+                    // isActive={isActive}
                     repeat={repeat}
                     setRepeat={setRepeat}
                     shuffle={shuffle}
@@ -93,7 +93,7 @@ const MusicPlayer = () => {
                     isPlaying={isPlaying}
                     seekTime={seekTime}
                     repeat={repeat}
-                    currentIndex={currentIndex}
+                    // currentIndex={currentIndex}
                     onEnded={handleNextSong}
                     onTimeUpdate={(event: React.FormEvent) =>
                         setAppTime(

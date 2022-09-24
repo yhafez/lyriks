@@ -6,6 +6,7 @@ import {
     BsFillPlayFill,
     BsShuffle,
 } from "react-icons/bs";
+import { Song } from "../../types";
 
 export interface IControls {
     isPlaying: boolean;
@@ -13,7 +14,7 @@ export interface IControls {
     setRepeat: React.Dispatch<React.SetStateAction<boolean>>;
     shuffle: boolean;
     setShuffle: React.Dispatch<React.SetStateAction<boolean>>;
-    currentSongs: any;
+    currentSongs: Song[];
     handlePlayPause: () => void;
     handlePrevSong: () => void;
     handleNextSong: () => void;
