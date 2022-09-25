@@ -10,7 +10,7 @@ import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
 import "swiper/css";
 import "swiper/css/free-mode";
-import { Song } from "../types";
+import { ISong } from "../types";
 
 const TopChartCard = ({
     song,
@@ -20,10 +20,10 @@ const TopChartCard = ({
     handlePlayClick,
     handlePauseClick,
 }: {
-    song: Song;
+    song: ISong;
     i: number;
     isPlaying: boolean;
-    activeSong: Song | null;
+    activeSong: ISong | null;
     handlePlayClick: () => void;
     handlePauseClick: () => void;
 }) => (

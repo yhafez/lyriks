@@ -3,7 +3,7 @@ import { useAppDispatch } from "../hooks";
 
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { Song } from "../types";
+import { ISong } from "../types";
 
 const SongCard = ({
     song,
@@ -12,11 +12,11 @@ const SongCard = ({
     index,
     data,
 }: {
-    song: Song;
+    song: ISong;
     isPlaying: boolean;
-    activeSong: Song | null;
+    activeSong: ISong | null;
     index: number;
-    data: Song[];
+    data: ISong[] | undefined;
 }) => {
     const dispatch = useAppDispatch();
 

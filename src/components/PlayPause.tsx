@@ -1,10 +1,10 @@
 import { FaPauseCircle, FaPlayCircle } from "react-icons/fa";
-import { Song } from "../types";
+import { ISong } from "../types";
 
 interface IPlayPause {
     isPlaying: boolean;
-    activeSong: Song | null;
-    song: Song;
+    activeSong: ISong | null;
+    song: ISong;
     handlePause: () => void;
     handlePlay: () => void;
 }
